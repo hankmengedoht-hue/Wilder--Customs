@@ -12,6 +12,8 @@ collections:
     label: Listings
     folder: _data/listings
     create: true
+    format: json
+    extension: json
     slug: '{{fields.year}}-{{fields.make}}-{{fields.model}}'
     fields:
       - { name: title, label: Title, widget: string, hint: 'e.g. 1981 Toyota Land Cruiser FJ45' }
