@@ -1,0 +1,16 @@
+---
+title: Car Test 1
+year: 1975
+make: Toyota
+model: Landcruiser
+status: forsale
+price: $14500
+photos:
+  - /images/uploads/listings/fj43-80-01.jpg
+specs:
+  - label: Miles
+    value: '5000'
+story:
+  - Paragraph
+published: true
+---
