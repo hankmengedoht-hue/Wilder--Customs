@@ -172,22 +172,22 @@
       <p class="contact-copy">Tell us about your vehicle and we'll follow up with a free valuation and what to expect from the process. No pressure, no obligation.</p>
       <div class="contact-detail">
         <div><span>Call</span>(828) 772-8482</div>
-        <div><span>Email</span><a href="mailto:Jack@wildercustoms.com" style="text-decoration:underline;">Jack@wildercustoms.com</a></div>
+        <div><span>Email</span><a href="mailto:Jack@wilder4x4.com" style="text-decoration:underline;">Jack@wilder4x4.com</a></div>
         <div><span>Based In</span>Charleston, SC</div>
       </div>
       <div class="buy-note">Looking to buy instead of sell? We also source vehicles for buyers — <a onclick="goHash('#contact')">tell us what you're after</a> and we'll go hunt for it.</div>
     </div>
-    <form onsubmit="event.preventDefault(); this.querySelector('.submit-row').innerHTML='<p style=\'font-family:Work Sans, sans-serif; font-size:13px; color:#565C45;\'>Got it — we will follow up with a valuation within one business day.</p>';">
+    <form id="contact-form" action="https://formspree.io/f/xyeglbbv" method="POST" onsubmit="return handleContactSubmit(event, this);">
       <div class="field-row">
-        <div><label for="name">Name</label><input id="name" type="text" required></div>
-        <div><label for="phone">Phone</label><input id="phone" type="tel"></div>
+        <div><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
       </div>
-      <div><label for="email">Email</label><input id="email" type="email" required></div>
+      <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
       <div class="field-row">
-        <div><label for="ymm">Year / Make / Model</label><input id="ymm" type="text" placeholder="e.g. 1978 Ford Bronco"></div>
+        <div><label for="ymm">Year / Make / Model</label><input id="ymm" name="year_make_model" type="text" placeholder="e.g. 1978 Ford Bronco"></div>
         <div>
           <label for="condition">Condition</label>
-          <select id="condition">
+          <select id="condition" name="condition">
             <option>Original / Unrestored</option>
             <option>Restored</option>
             <option>Custom Build</option>
@@ -195,7 +195,7 @@
           </select>
         </div>
       </div>
-      <div><label for="details">Tell us about it</label><textarea id="details" placeholder="History, mileage, modifications, asking price expectations..."></textarea></div>
+      <div><label for="details">Tell us about it</label><textarea id="details" name="message" placeholder="History, mileage, modifications, asking price expectations..."></textarea></div>
       <div class="submit-row">
         <button type="submit" class="btn-primary" style="border:1px solid var(--rust-bright);">Submit For Valuation</button>
       </div>

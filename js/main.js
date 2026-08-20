@@ -103,6 +103,32 @@ function goHash(hash){
   if(el) el.scrollIntoView({behavior:'smooth'});
 }
 
+async function handleContactSubmit(event, form){
+  event.preventDefault();
+  const submitRow = form.querySelector('.submit-row');
+  const button = submitRow.querySelector('button');
+  button.disabled = true;
+  button.textContent = 'Sending...';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      submitRow.innerHTML = '<p style="font-family:Work Sans, sans-serif; font-size:13px; color:#565C45;">Got it — we will follow up with a valuation within one business day.</p>';
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (err) {
+    button.disabled = false;
+    button.textContent = 'Submit For Valuation';
+    submitRow.insertAdjacentHTML('beforeend', '<p style="font-family:Work Sans, sans-serif; font-size:13px; color:#b23b3b; margin-top:10px;">Something went wrong — please email us directly at Jack@wilder4x4.com.</p>');
+  }
+  return false;
+}
+
 function initScrollReveal(){
   const reveals = document.querySelectorAll('.reveal:not(.in)');
   const io = new IntersectionObserver((entries)=>{
