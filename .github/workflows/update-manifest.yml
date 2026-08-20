@@ -20,9 +20,7 @@ jobs:
             folder="${dir%/}"
             manifest="$folder/manifest.json"
             files=$(find "$folder" -maxdepth 1 -name '*.json' ! -name 'manifest.json' -printf '%f\n' | sort)
-            if [ -n "$files" ]; then
-              echo "$files" | jq -R -s -c 'split("\n") | map(select(length > 0))' > "$manifest"
-            fi
+            echo "$files" | jq -R -s -c 'split("\n") | map(select(length > 0))' > "$manifest"
           done
 
       - name: Commit changes
