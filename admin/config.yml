@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: hankmengedoht-hue/Wilder--Customs
+  branch: main
+  base_url: https://wildercustoms-cms-auth.hankmengedoht.workers.dev
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: listings
+    label: Listings
+    folder: _data/listings
+    create: true
+    slug: '{{fields.year}}-{{fields.make}}-{{fields.model}}'
+    fields:
+      - { name: title, label: Title, widget: string, hint: 'e.g. 1981 Toyota Land Cruiser FJ45' }
+      - { name: year, label: Year, widget: number, value_type: int }
+      - { name: make, label: Make, widget: string }
+      - { name: model, label: Model, widget: string }
+      - name: status
+        label: Status
+        widget: select
+        options:
+          - { label: 'For Sale', value: forsale }
+          - { label: 'Sold', value: sold }
+      - { name: price, label: Price, widget: string, hint: 'e.g. $85,000, "Sold", or "Inquire"' }
+      - name: photos
+        label: Photos
+        widget: list
+        field: { name: photo, label: Photo, widget: image }
+      - name: specs
+        label: Specs
+        widget: list
+        fields:
+          - { name: label, label: Label, widget: string, hint: 'e.g. Mileage, Engine, Drivetrain' }
+          - { name: value, label: Value, widget: string }
+      - name: story
+        label: Write-Up (one paragraph per item)
+        widget: list
+        field: { name: paragraph, label: Paragraph, widget: text }
+      - { name: published, label: Published, widget: boolean, default: true }

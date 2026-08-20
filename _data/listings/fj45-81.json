@@ -1,0 +1,50 @@
+{
+  "title": "1981 Toyota Land Cruiser FJ45",
+  "year": 1981,
+  "make": "Toyota",
+  "model": "Land Cruiser FJ45",
+  "status": "sold",
+  "price": "Sold",
+  "photos": [
+    "/images/uploads/listings/fj45-81-01.jpg",
+    "/images/uploads/listings/fj45-81-02.jpg",
+    "/images/uploads/listings/fj45-81-03.jpg",
+    "/images/uploads/listings/fj45-81-04.jpg",
+    "/images/uploads/listings/fj45-81-05.jpg",
+    "/images/uploads/listings/fj45-81-06.jpg",
+    "/images/uploads/listings/fj45-81-07.jpg",
+    "/images/uploads/listings/fj45-81-08.jpg"
+  ],
+  "specs": [
+    {
+      "label": "Mileage",
+      "value": "TMU (True Mileage Unknown)"
+    },
+    {
+      "label": "Engine",
+      "value": "4.2L 2F Inline-Six"
+    },
+    {
+      "label": "Transmission",
+      "value": "4-Speed Manual"
+    },
+    {
+      "label": "Drivetrain",
+      "value": "4x4"
+    },
+    {
+      "label": "Suspension",
+      "value": "Old Man Emu"
+    },
+    {
+      "label": "Tires",
+      "value": "33 in. BFGoodrich Mud-Terrain"
+    }
+  ],
+  "story": [
+    "The FJ45 has long held a special place in the collector 4x4 world — produced in far smaller numbers than the FJ40, the long-wheelbase pickup pairs Toyota's legendary durability with genuine work-truck capability. This 1981 example is one of the final years of production, carrying the proven 4.2L 2F inline-six, a four-speed manual, and factory four-wheel-drive.",
+    "It's been thoughtfully upgraded rather than left bone stock: an Old Man Emu suspension improves ride quality and articulation without sacrificing reliability, and 33-inch BFGoodrich Mud-Terrain tires add capability while keeping the truck's classic proportions. Power steering and power brakes make it easy to drive day to day.",
+    "The seller notes it was restored at some point in its life, though documentation on that work isn't available, and mileage is TMU (true mileage unknown). It carries a clean South Carolina title — an honest, driver-quality FJ45 rather than a six-figure frame-off build."
+  ],
+  "published": true
+}
