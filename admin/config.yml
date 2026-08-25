@@ -42,3 +42,29 @@ collections:
         widget: list
         field: { name: paragraph, label: Paragraph, widget: text }
       - { name: published, label: Published, widget: boolean, default: true }
+
+  - name: pages
+    label: Page Content
+    files:
+      - name: about
+        label: About Page
+        file: _data/pages/about.json
+        fields:
+          - { name: founder_name, label: Founder Name, widget: string }
+          - { name: founder_title, label: Founder Title, widget: string }
+          - name: photo_1
+            label: Photo 1
+            widget: image
+            required: false
+            media_folder: images/uploads/about
+            public_folder: /images/uploads/about
+          - name: photo_2
+            label: Photo 2
+            widget: image
+            required: false
+            media_folder: images/uploads/about
+            public_folder: /images/uploads/about
+          - name: bio
+            label: Bio (one paragraph per item)
+            widget: list
+            field: { name: paragraph, label: Paragraph, widget: text }

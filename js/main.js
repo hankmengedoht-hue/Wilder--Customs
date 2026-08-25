@@ -24,6 +24,28 @@ function getSpec(l, label) {
   return found ? found.value : '';
 }
 
+async function loadAboutContent() {
+  let about;
+  try {
+    about = await fetchJSON('/_data/pages/about.json');
+  } catch (e) {
+    return;
+  }
+
+  const setPhoto = (id, src) => {
+    const img = document.getElementById(id);
+    const wrap = img.closest('.about-photo');
+    if (src) { img.src = src; img.alt = about.founder_name || ''; wrap.style.display = ''; }
+    else { wrap.style.display = 'none'; }
+  };
+  setPhoto('about-photo-1', about.photo_1);
+  setPhoto('about-photo-2', about.photo_2);
+
+  document.getElementById('about-bio').innerHTML = (about.bio || []).map(p => `<p>${p}</p>`).join('');
+  document.getElementById('about-name').textContent = about.founder_name || '';
+  document.getElementById('about-title').textContent = about.founder_title || '';
+}
+
 function renderGallery(filter){
   const grid = document.getElementById('gallery-grid');
   grid.innerHTML = '';
@@ -138,4 +160,5 @@ function initScrollReveal(){
 }
 
 loadListings();
+loadAboutContent();
 initScrollReveal();
