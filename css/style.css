@@ -244,6 +244,7 @@
   .about-photos{display:flex; flex-direction:column; gap:16px;}
   .about-photo{border:1px solid var(--line); overflow:hidden; background:var(--bg-alt);}
   .about-photo img{width:100%; height:auto; display:block;}
+  .about-bio{margin-top:22px;}
   .about-bio p{color:var(--ink-dim); font-size:16px; margin-bottom:18px; max-width:520px;}
   .about-signature{margin-top:28px; padding-top:22px; border-top:1px solid var(--line);}
   .about-name{font-family:'Fraunces', serif; font-weight:600; font-size:20px; color:var(--paper); text-transform:uppercase; letter-spacing:0.02em;}
