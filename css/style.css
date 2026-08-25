@@ -242,8 +242,9 @@
   .about{border-bottom:1px solid var(--line);}
   .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
   .about-photos{display:flex; flex-direction:column; gap:16px;}
-  .about-photo{border:1px solid var(--line); overflow:hidden; background:var(--bg-alt);}
-  .about-photo img{width:100%; height:auto; display:block;}
+  .about-photo{border:1px solid var(--line); overflow:hidden; background:var(--bg-alt); flex:1; min-height:0; display:flex; align-items:center; justify-content:center;}
+  .about-photo img{max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;}
+  @media (min-width:861px){ .about-photos{height:var(--about-photos-h, auto);} }
   .about-bio{margin-top:22px;}
   .about-bio p{color:var(--ink-dim); font-size:16px; margin-bottom:18px; max-width:520px;}
   .about-signature{margin-top:28px; padding-top:22px; border-top:1px solid var(--line);}

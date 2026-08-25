@@ -44,6 +44,19 @@ async function loadAboutContent() {
   document.getElementById('about-bio').innerHTML = (about.bio || []).map(p => `<p>${p}</p>`).join('');
   document.getElementById('about-name').textContent = about.founder_name || '';
   document.getElementById('about-title').textContent = about.founder_title || '';
+
+  matchAboutPhotoHeight();
+  window.addEventListener('resize', matchAboutPhotoHeight);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(matchAboutPhotoHeight);
+  }
+}
+
+function matchAboutPhotoHeight(){
+  const copy = document.getElementById('about-copy');
+  const photos = document.getElementById('about-photos');
+  if (!copy || !photos) return;
+  photos.style.setProperty('--about-photos-h', copy.offsetHeight + 'px');
 }
 
 function renderGallery(filter){
